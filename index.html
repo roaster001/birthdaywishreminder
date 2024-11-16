@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Birthday Automation</h1>
-    <p id="status">Checking date...</p>
+    <p id="status">Checking date... wait 7 sec</p>
     <script>
         // Target Date and User
         // Set the specific date
@@ -26,8 +26,11 @@
             )}`;
             window.open(url, "_blank"); // Open WhatsApp link in a new tab
             statusElement.textContent = "Birthday message sent!";
+            set=true;
         }
 
+
+    
         // Function to check the date
         function checkBirthday() {
             const today = new Date();
@@ -35,7 +38,7 @@
             const birthdayDatevedant = new Date("2025-06-19");
             const birthdayDatepriyal = new Date("2025-06-20");
             const birthdayDatemanas = new Date("2025-08-13");
-            const birthdayDatenandani = new Date("2024-11-16");
+            const birthdayDatenandani = new Date("2024-08-20");
             const birthdayDatenidhi = new Date("2025-10-13");
             const birthdayDateronak = new Date("2025-10-10");
             const birthdayDatevatsal = new Date("2025-12-20");
@@ -121,11 +124,10 @@
             
             
             else {
-                const daysRemaining = Math.ceil(
-                    (birthdayDate - today) / (1000 * 60 * 60 * 24)
-                );
-                statusElement.textContent = `Waiting for the birthday... ${daysRemaining} day(s) to go.`;
-            }
+    setTimeout(function() {
+        alert("No birthday today, visit again");
+    }, 7000);  // Delay of 7 seconds (7000 milliseconds)
+}
         }
 
         // Execute the function every 24 hours
